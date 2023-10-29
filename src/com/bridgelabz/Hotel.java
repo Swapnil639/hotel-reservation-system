@@ -3,11 +3,14 @@ package com.bridgelabz;
 public class Hotel {
     String hotelName;
     int weekdayRegularCustomer;
+    int weekendRegularCustomer;
 
-    public Hotel(String hotelName, int regularCustomer) {
+    public Hotel(String hotelName, int weekdayRegularCustomer, int weekendRegularCustomer) {
         this.hotelName = hotelName;
-        this.weekdayRegularCustomer = regularCustomer;
+        this.weekdayRegularCustomer = weekdayRegularCustomer;
+        this.weekendRegularCustomer = weekendRegularCustomer;
     }
+
     Hotel(){
 
     }
@@ -20,11 +23,16 @@ public class Hotel {
         return weekdayRegularCustomer;
     }
 
+    public int getWeekendRegularCustomer() {
+        return weekendRegularCustomer;
+    }
+
     @Override
     public String toString() {
         return "Hotel{" +
                 "hotelName='" + hotelName + '\'' +
-                ", regularCustomer=" + weekdayRegularCustomer +
+                ", weekdayRegularCustomer=" + weekdayRegularCustomer +
+                ", weekendRegularCustomer=" + weekendRegularCustomer +
                 '}';
     }
 

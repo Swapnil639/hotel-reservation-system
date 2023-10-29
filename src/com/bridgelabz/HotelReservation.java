@@ -17,12 +17,12 @@ customer. The weekend rates are 150 for regular customer and 40 for a rewards cu
 public class HotelReservation {
     static ArrayList<Hotel> hotelList=new ArrayList<>();
     public static void main(String[] args) {
-        Hotel Lakewood = new Hotel( "Lakewood", 110);
-        Hotel Bridgewood = new Hotel( "Bridgewood", 160);
-        Hotel Ridgewood = new Hotel("Ridgewood", 220);
-        hotelList.add(Lakewood);
-        hotelList.add(Bridgewood);
-        hotelList.add(Ridgewood);
+        Hotel lakewood = new Hotel( "Lakewood", 110,90);
+        Hotel bridgewood = new Hotel( "Bridgewood", 160,60);
+        Hotel ridgewood = new Hotel("Ridgewood", 220,150);
+        hotelList.add(lakewood);
+        hotelList.add(bridgewood);
+        hotelList.add(ridgewood);
         System.out.println(hotelList);
         findCheapestHotel();
     }
