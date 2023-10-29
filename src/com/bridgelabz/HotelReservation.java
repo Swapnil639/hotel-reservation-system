@@ -1,5 +1,8 @@
 package com.bridgelabz;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 
 /*
@@ -21,5 +24,26 @@ public class HotelReservation {
         hotelList.add(Bridgewood);
         hotelList.add(Ridgewood);
         System.out.println(hotelList);
+        findCheapestHotel();
+    }
+
+    public static void findCheapestHotel(){
+        LocalDate date = LocalDate.of(2020, Month.SEPTEMBER, 10);
+        LocalDate date1 = LocalDate.of(2020, Month.SEPTEMBER, 11);
+        DayOfWeek localDate1 = date.getDayOfWeek();
+        DayOfWeek localDate2 = date1.getDayOfWeek();
+        String day1 = String.valueOf(localDate1);
+        String day2 = String.valueOf(localDate2);
+        int sum1 = hotelList.get(0).rateCalculation(day1) + hotelList.get(0).rateCalculation(day2);
+        int sum2 = hotelList.get(1).rateCalculation(day1) + hotelList.get(1).rateCalculation(day2);
+        int sum3 = hotelList.get(2).rateCalculation(day1) + hotelList.get(2).rateCalculation(day2);
+
+        if (sum1<sum2 && sum1<sum3){
+            System.out.println("Hotel Name:Lakewood"+" "+"Rate:"+sum1+"$");
+        }else if (sum2<sum1 && sum2<sum3){
+            System.out.println("Hotel Name:Bridgewood"+" "+"Rate:"+sum2+"$");
+        }else {
+            System.out.println("Hotel Name:Ridgewood"+" "+"Rate:"+sum3+"$");
+        }
     }
 }

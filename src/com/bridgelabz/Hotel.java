@@ -12,11 +12,26 @@ public class Hotel {
 
     }
 
+    public String getHotelName() {
+        return hotelName;
+    }
+
+    public int getWeekdayRegularCustomer() {
+        return weekdayRegularCustomer;
+    }
+
     @Override
     public String toString() {
         return "Hotel{" +
                 "hotelName='" + hotelName + '\'' +
                 ", regularCustomer=" + weekdayRegularCustomer +
                 '}';
+    }
+
+    public int rateCalculation(String day) {
+        if (day.equals("MONDAY")||day.equals("TUESDAY")||day.equals("WEDNESDAY")||day.equals("THURSDAY")||day.equals("FRIDAY")){
+            return getWeekdayRegularCustomer();
+        }
+        return 0;
     }
 }
