@@ -4,6 +4,7 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /*
 Lakewood with a rating of 3 has weekday rates as 110$ for regular customer and 80$ for rewards
@@ -16,6 +17,7 @@ customer. The weekend rates are 150 for regular customer and 40 for a rewards cu
 
 public class HotelReservation {
     static ArrayList<Hotel> hotelList=new ArrayList<>();
+    Scanner scanner=new Scanner(System.in);
     public static void main(String[] args) {
         HotelReservation hotelReservation=new HotelReservation();
         Hotel hotel1 = new Hotel( "Lakewood", 110,80,90,80,3);
@@ -37,9 +39,11 @@ public class HotelReservation {
         DayOfWeek localDate2 = date1.getDayOfWeek();
         String day1 = String.valueOf(localDate1);
         String day2 = String.valueOf(localDate2);
-        int sum1 = hotelList.get(0).rateCalculation(day1) + hotelList.get(0).rateCalculation(day2);
-        int sum2 = hotelList.get(1).rateCalculation(day1) + hotelList.get(1).rateCalculation(day2);
-        int sum3 = hotelList.get(2).rateCalculation(day1) + hotelList.get(2).rateCalculation(day2);
+        System.out.println("Choose 1 :Regular customer 2:Reward Customer");
+        int option=scanner.nextInt();
+        int sum1 = hotelList.get(0).rateCalculation(day1,option) + hotelList.get(0).rateCalculation(day2,option);
+        int sum2 = hotelList.get(1).rateCalculation(day1,option) + hotelList.get(1).rateCalculation(day2,option);
+        int sum3 = hotelList.get(2).rateCalculation(day1,option) + hotelList.get(2).rateCalculation(day2,option);
 
         if (sum1>sum2 && sum1>sum3){
             System.out.println("Hotel Name:Lakewood"+" "+"Rate:"+sum1+"$");

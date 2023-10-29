@@ -8,7 +8,7 @@ public class Hotel {
     int weekendRewardCustomer;
     int rating;
 
-    public Hotel(String hotelName, int weekdayRegularCustomer, int weekdayRewardCustomer,int weekendRegularCustomer,int weekendRewardCustomer, int rating) {
+    public Hotel(String hotelName, int weekdayRegularCustomer, int weekdayRewardCustomer, int weekendRegularCustomer, int weekendRewardCustomer, int rating) {
         this.hotelName = hotelName;
         this.weekdayRegularCustomer = weekdayRegularCustomer;
         this.weekendRegularCustomer = weekendRegularCustomer;
@@ -17,7 +17,7 @@ public class Hotel {
         this.rating = rating;
     }
 
-    Hotel(){
+    Hotel() {
 
     }
 
@@ -57,11 +57,24 @@ public class Hotel {
                 '}';
     }
 
-    public int rateCalculation(String day) {
-        if (day.equals("MONDAY")||day.equals("TUESDAY")||day.equals("WEDNESDAY")||day.equals("THURSDAY")||day.equals("FRIDAY")){
-            return getWeekdayRegularCustomer();
-        }else {
-            return getWeekendRegularCustomer();
+    public int rateCalculation(String day, int i) {
+        try {
+            if (day.equals("MONDAY") || day.equals("TUESDAY") || day.equals("WEDNESDAY") || day.equals("THURSDAY") || day.equals("FRIDAY")) {
+                if (i == 1) {
+                    return getWeekdayRegularCustomer();
+                } else {
+                    return getWeekdayRewardCustomer();
+                }
+            } else {
+                if (i == 1) {
+                    return getWeekendRegularCustomer();
+                } else {
+                    return getWeekendRewardCustomer();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e);
         }
+        return 0;
     }
 }
