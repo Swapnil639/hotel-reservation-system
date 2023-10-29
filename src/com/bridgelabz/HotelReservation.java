@@ -18,9 +18,9 @@ public class HotelReservation {
     static ArrayList<Hotel> hotelList=new ArrayList<>();
     public static void main(String[] args) {
         HotelReservation hotelReservation=new HotelReservation();
-        Hotel hotel1 = new Hotel( "Lakewood", 110,90,3);
-        Hotel hotel2 = new Hotel( "Bridgewood", 160,60,4);
-        Hotel hotel3 = new Hotel("Ridgewood", 220,150,5);
+        Hotel hotel1 = new Hotel( "Lakewood", 110,80,90,80,3);
+        Hotel hotel2 = new Hotel( "Bridgewood", 160,110,60,50,4);
+        Hotel hotel3 = new Hotel("Ridgewood", 220,100,150,40,5);
         hotelList.add(hotel1);
         hotelList.add(hotel2);
         hotelList.add(hotel3);
