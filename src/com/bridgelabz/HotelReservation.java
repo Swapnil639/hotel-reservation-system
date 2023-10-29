@@ -28,8 +28,8 @@ public class HotelReservation {
     }
 
     public static void findCheapestHotel(){
-        LocalDate date = LocalDate.of(2020, Month.SEPTEMBER, 10);
-        LocalDate date1 = LocalDate.of(2020, Month.SEPTEMBER, 11);
+        LocalDate date = LocalDate.of(2020, Month.SEPTEMBER, 11);
+        LocalDate date1 = LocalDate.of(2020, Month.SEPTEMBER, 12);
         DayOfWeek localDate1 = date.getDayOfWeek();
         DayOfWeek localDate2 = date1.getDayOfWeek();
         String day1 = String.valueOf(localDate1);
